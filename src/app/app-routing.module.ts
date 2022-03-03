@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { HomePageModule } from './pages/home.page-module';
 
-
-const routes: Routes = [];
+const routes: Routes = [{ 
+        path: '', 
+        loadChildren: () => HomePageModule
+      }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
