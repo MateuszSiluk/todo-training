@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+$position-values: (
+  0: 0,
+  50: 50%,
+  100: 100%
+);
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "~ngx-bootstrap/datepicker/bs-datepicker";
