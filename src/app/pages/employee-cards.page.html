@@ -1,0 +1,66 @@
+<h1>Employee Cards Page</h1>
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3">
+        <div class="col mb-4">
+            <div class="card">
+                <a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" aria-current="page"
+                    [routerLink]="['/pracownik/' + images.image1.name]">
+                <img [src]="[images.image1.src]" class="card-img-top" [alt]="[images.image1.name]" />
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">{{images.image1.name}}</h5>
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex ea commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                        culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card">
+                <a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" aria-current="page"
+                    [routerLink]="['/pracownik/' + images.image2.name]">
+                    <img [src]="[images.image2.src]" class="card-img-top" [alt]="[images.image2.name]" />
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">{{images.image2.name}}</h5>
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex ea commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                        culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card">
+                <a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" aria-current="page"
+                    [routerLink]="['/pracownik/' + images.image3.name]">
+                <img [src]="[images.image3.src]" class="card-img-top" [alt]="[images.image3.name]" />
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">{{images.image3.name}}</h5>
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex ea commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                        culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
