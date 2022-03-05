@@ -5,7 +5,7 @@
         <div class="col mb-4">
             <div class="card">
                 <a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" aria-current="page"
-                    [routerLink]="['/pracownik/' + images.image1.name]">
+                    [routerLink]="['/pracownik/' + images.image1.name]" [queryParams]="{ image: images.image1.src.toString()}">
                 <img [src]="[images.image1.src]" class="card-img-top" [alt]="[images.image1.name]" />
                 </a>
                 <div class="card-body">
@@ -25,7 +25,7 @@
         <div class="col mb-4">
             <div class="card">
                 <a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" aria-current="page"
-                    [routerLink]="['/pracownik/' + images.image2.name]">
+                    [routerLink]="['/pracownik/' + images.image2.name]" [queryParams]="{ image: images.image2.src.toString()}">
                     <img [src]="[images.image2.src]" class="card-img-top" [alt]="[images.image2.name]" />
                 </a>
                 <div class="card-body">
@@ -45,7 +45,7 @@
         <div class="col mb-4">
             <div class="card">
                 <a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" aria-current="page"
-                    [routerLink]="['/pracownik/' + images.image3.name]">
+                    [routerLink]="['/pracownik/' + images.image3.name]" [queryParams]="{ image: images.image3.src.toString()}">
                 <img [src]="[images.image3.src]" class="card-img-top" [alt]="[images.image3.name]" />
                 </a>
                 <div class="card-body">
