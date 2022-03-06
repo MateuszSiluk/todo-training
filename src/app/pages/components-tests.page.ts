@@ -2,6 +2,7 @@ import {
   Component,
   ViewEncapsulation,
   ChangeDetectionStrategy,
+  OnInit
 } from '@angular/core';
 
 
@@ -12,4 +13,21 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
   
 })
-export class ComponentsTestsPage {}
+export class ComponentsTestsPage implements OnInit{
+  serverCreationStatus = 'No Server Created!';
+  allowNewServer = false;
+
+  constructor(){
+    setTimeout(()=> {
+      this.allowNewServer = true
+    }, 2000);
+  }
+
+  ngOnInit(): void {
+    
+  }
+
+  onCreateServer(){
+    this.serverCreationStatus = 'Server was created';
+  }
+}
