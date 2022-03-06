@@ -1,10 +1,11 @@
+import { partitionArray } from '@angular/compiler/src/util';
 import {
   Component,
   ViewEncapsulation,
   ChangeDetectionStrategy,
   OnInit,
 } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router'
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -15,18 +16,17 @@ import { map } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EmployeeDetailsPage implements OnInit {
-    
-    name: string
-    image: Observable<string>;
+  name$: Observable<string>;
+  image$: Observable<string>;
   constructor(private route: ActivatedRoute) {}
 
-    ngOnInit(): void {
-        this.name = this.route.snapshot.paramMap.get('name')
+  ngOnInit(): void {
+    this.name$ = this.route.params.pipe(
+      map((params: ParamMap) => params['name'])
+    );
 
-        this.image = this.route.queryParamMap.pipe(
-          map((params: ParamMap) => params.get('image')),
-        );
-
-        
+    this.image$ = this.route.queryParamMap.pipe(
+      map((params: ParamMap) => params.get('image'))
+    );
   }
 }
