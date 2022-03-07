@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { ComponentsTestsPage } from './components-tests.page';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
+
 @NgModule({ imports: [CommonModule, 
     BsDropdownModule.forRoot(),
       RouterModule.forChild([
