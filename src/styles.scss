@@ -9,4 +9,15 @@ $position-values: (
 /* Importing Datepicker SCSS file. */
 @import "~ngx-bootstrap/datepicker/bs-datepicker";
 
-$enable-cssgrid: true
+
+$font-stack: Helvetica, sans-serif;
+$primary-color: rgb(43, 40, 40);
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+
+  
+
