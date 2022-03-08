@@ -5,9 +5,8 @@ import {
   ChangeDetectionStrategy,
   OnInit,
 } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'lib-employee-details-page',
@@ -15,18 +14,12 @@ import { map } from 'rxjs/operators';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class EmployeeDetailsPage implements OnInit {
-  name$: Observable<string>;
-  image$: Observable<string>;
-  constructor(private route: ActivatedRoute) {}
+export class EmployeeDetailsPage{
+  params$ = this.activatedRoute.params;
+  queryParams$ = this.activatedRoute.queryParamMap;
+   
+  constructor(private activatedRoute: ActivatedRoute) {}
 
-  ngOnInit(): void {
-    this.name$ = this.route.params.pipe(
-      map((params: ParamMap) => params['name'])
-    );
-
-    this.image$ = this.route.queryParamMap.pipe(
-      map((params: ParamMap) => params.get('image'))
-    );
-  }
+  
+  
 }
