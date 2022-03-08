@@ -5,7 +5,6 @@ import {
   ChangeDetectionStrategy,
   OnInit,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -15,10 +14,7 @@ import { ActivatedRoute } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EmployeeDetailsPage{
-  params$ = this.activatedRoute.params;
-  queryParams$ = this.activatedRoute.queryParamMap;
-   
-  constructor(private activatedRoute: ActivatedRoute) {}
+ 
 
   
   
