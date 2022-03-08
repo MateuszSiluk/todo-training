@@ -4,6 +4,8 @@ import {
   ChangeDetectionStrategy,
 } from '@angular/core';
 import { Employee } from './employee.model';
+import { of } from 'rxjs';
+
 
 @Component({
   selector: 'lib-employee-cards-page',
@@ -17,7 +19,7 @@ export class EmployeeCardsPage {
     new Employee('Test', 'Test', 'Test'),
   ];
 
-  employees = [
+  employees$ = of ([
     {
       src: '../../assets/images/fake-person-1.jpg',
       name: 'Dani Chavez',
@@ -40,5 +42,5 @@ export class EmployeeCardsPage {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     
     },
-  ];
+  ]);
 }
