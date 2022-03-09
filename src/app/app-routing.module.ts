@@ -34,7 +34,7 @@ const routes: Routes = [{
         loadChildren: () => TestsPageModule
       },
   { 
-        path: 'contact', 
+        path: 'kontakt', 
         loadChildren: () => ContactPageModule
       }
 ];
