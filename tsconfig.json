@@ -17,6 +17,10 @@
       "dom"
     ],
     "paths": {
+      "form": [
+        "dist/form/form",
+        "dist/form"
+      ],
       "team": [
         "dist/team/team",
         "dist/team"
