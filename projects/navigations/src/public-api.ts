@@ -2,6 +2,4 @@
  * Public API Surface of navigations
  */
 
-export * from './lib/navigations.service';
-export * from './lib/navigations.component';
-export * from './lib/navigations.module';
+export * from './lib/adapters/primary/ui/main-menu.component-module';

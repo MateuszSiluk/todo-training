@@ -4,10 +4,11 @@ import {
   ChangeDetectionStrategy,
 } from '@angular/core';
 
+
 @Component({
-  selector: 'lib-contact-page',
-  templateUrl: './contact.page.html',
+  selector: 'lib-main-menu',
+  templateUrl: './main-menu.component.html',
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ContactPage {}
+export class MainMenuComponent {}
