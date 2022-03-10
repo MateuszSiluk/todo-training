@@ -11,7 +11,7 @@ import { ContactFormComponentModule } from '../../../projects/messages/src/lib/a
           component: ContactPage,
         }
       ]),
-  ContactFormComponentModule
+  ContactFormComponentModule,
 ],
   	declarations: [ContactPage],
   	providers: [],
