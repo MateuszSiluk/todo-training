@@ -1,24 +1,31 @@
 import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { EmployeeDTO } from '../../../application/ports/secondary/employee.dto';
 
 @Component({ selector: 'lib-our-team', templateUrl: './our-team.component.html', encapsulation: ViewEncapsulation.None, changeDetection: ChangeDetectionStrategy.OnPush })
 export class OurTeamComponent {
-    employees$ = of ([
-
+    employees$: Observable<EmployeeDTO[]> = of ([
         {
-        src: '../../assets/images/fake-person-1.jpg',
-        alt: 'Dani Chavez'
+            id: '1',
+            name:'Dani Chavez',
+            bio: 'Lorem ipsum',
+            imageUrl: '../../assets/images/fake-person-1.jpg',
+        },
+        {
+            id: '2',
+            name:'Katie Carter',
+            bio: 'Lorem ipsum',
+            imageUrl: '../../assets/images/fake-person-2.jpg',
+        },
+        {
+            id: '3',
+            name:'Kara Welsh',
+            bio: 'Lorem ipsum',
+            imageUrl: '../../assets/images/fake-person-3.jpg',
         },
 
-        {
-        src: '../../assets/images/fake-person-2.jpg',
-        alt: 'Katie Carter'
-        },
-
-        {
-        src: '../../assets/images/fake-person-3.jpg',
-        alt: 'Kara Welsh'
-        }
-     ] );
+    ]);
     
 }
+
+
