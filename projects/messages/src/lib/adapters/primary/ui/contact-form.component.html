@@ -1,3 +1,7 @@
+<div *ngFor="let alert of alerts$ | async">
+  
+  <alert [type]="alert.type" [dismissible]="!dismissible" (onClosed)="onClosed(alert)">{{ alert.message }}</alert>
+</div>
 <div class="col-md-8 offset-md-2 mt-5">
   <div class="card">
       <h4 class="card-header">Contact Us</h4>
