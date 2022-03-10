@@ -21,14 +21,19 @@
         "dist/messages/messages",
         "dist/messages"
       ],
+      "@messages" : ["projects/messages/src/public-api.ts"],
+
       "navigations": [
         "dist/navigations/navigations",
         "dist/navigations"
       ],
+      "@navigation" : ["projects/navigations/src/public-api.ts"],
+      
       "team": [
         "dist/team/team",
         "dist/team"
-      ]
+      ],
+      "@teams" : ["projects/teams/src/public-api.ts"],
     }
   },
   "angularCompilerOptions": {
