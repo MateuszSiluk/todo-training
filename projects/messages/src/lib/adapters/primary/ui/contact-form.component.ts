@@ -20,14 +20,15 @@ export class ContactFormComponent {
   readonly messageForm: FormGroup = new FormGroup({
     email: new FormControl(),
     text: new FormControl(),
+    alertType: new FormControl(),
   });
   
   onFormSubmited(messageForm: FormGroup): void {
     
-     this.alerts$ = of ([ {type: "info",message:"This is Email:" + messageForm.value.email + "and this is Text: \n" + messageForm.value.text}]);
+     this.alerts$ = of ([ {type: messageForm.value.alertType,message:"This is Email:" + messageForm.value.email + "and this is Text: \n" + messageForm.value.text}]);
 
     //Showing the Values in the console 
-    //console.log(messageForm.getRawValue());
+    console.log(messageForm.getRawValue());
   }
 
   
