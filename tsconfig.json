@@ -21,6 +21,10 @@
         "dist/messages/messages",
         "dist/messages"
       ],
+      "navigations": [
+        "dist/navigations/navigations",
+        "dist/navigations"
+      ],
       "team": [
         "dist/team/team",
         "dist/team"
