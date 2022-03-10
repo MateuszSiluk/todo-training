@@ -3,8 +3,9 @@ import {
   ViewEncapsulation,
   ChangeDetectionStrategy,
 } from '@angular/core';
+import { EmployeeDTO } from 'projects/teams/src/lib/application/ports/secondary/employee.dto';
+import { Observable, of } from 'rxjs';
 import { Employee } from './employee.model';
-import { of } from 'rxjs';
 
 
 @Component({
@@ -18,29 +19,24 @@ export class EmployeeCardsPage {
     new Employee('Test', 'Test', 'Test'),
     new Employee('Test', 'Test', 'Test'),
   ];
-
-  employees$ = of ([
+  employees$ : Observable<EmployeeDTO[]> = of ([
     {
-      src: '../../assets/images/fake-person-1.jpg',
-      name: 'Dani Chavez',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        id: '1',
+        name:'Dani Chavez',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        imageUrl: '../../assets/images/fake-person-1.jpg',
     },
-
     {
-      src: '../../assets/images/fake-person-2.jpg',
-      name: 'Katie Carter',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    
+        id: '2',
+        name:'Katie Carter',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        imageUrl: '../../assets/images/fake-person-2.jpg',
     },
-
     {
-      src: '../../assets/images/fake-person-3.jpg',
-      name: 'Kara Welsh',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    
+        id: '3',
+        name:'Kara Welsh',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        imageUrl: '../../assets/images/fake-person-3.jpg',
     },
-  ]);
+]);
 }
