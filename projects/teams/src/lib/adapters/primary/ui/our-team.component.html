@@ -1,20 +1,25 @@
-<div class="container">
-    <div class="row row-cols-1 row-cols-md-3">
-      <div class="col mb-4" *ngFor="let employee of employees$ | async">
-        <div class="card">
-          <img
-            [src]="employee.imageUrl"
-            class="card-img-top"
-            [alt]="employee.alt"
-          />
-          <div class="card-body">
-            <h5 class="card-title">{{employee.name}}</h5>
-            <p class="card-text">
-              {{employee.bio}}
-            </p>
-          </div>
-        </div>
+<div class="row row-cols-1 row-cols-md-3">
+  <div class="col mb-4" *ngFor="let employee of employees$ | async">
+    <div class="card">
+      <a
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{ exact: true }"
+        aria-current="page"
+        [routerLink]="['/pracownik/' + employee.name]"
+        [queryParams]="{ image: employee.imageUrl }"
+      >
+        <img
+          [src]="employee.imageUrl"
+          class="card-img-top"
+          [alt]="employee.alt"
+        />
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">{{ employee.name }}</h5>
+        <p class="card-text">
+          {{ employee.bio }}
+        </p>
       </div>
     </div>
   </div>
-  
+</div>
