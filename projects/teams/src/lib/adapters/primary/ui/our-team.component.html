@@ -3,9 +3,9 @@
       <div class="col mb-4" *ngFor="let employee of employees$ | async">
         <div class="card">
           <img
-            [src]="[employee.imageUrl]"
+            [src]="employee.imageUrl"
             class="card-img-top"
-            [alt]="[employee.alt]"
+            [alt]="employee.alt"
           />
           <div class="card-body">
             <h5 class="card-title">{{employee.name}}</h5>
