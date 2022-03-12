@@ -5,7 +5,7 @@ import {
 } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Observable, of } from 'rxjs';
-import { AlertDTO } from '../../../application/ports/secondary/alert.dto';
+import { IAlert } from '../../../interfaces/IAlert';
 import { IAlertType } from '../../../interfaces/IAlertType';
 
 @Component({
@@ -15,7 +15,7 @@ import { IAlertType } from '../../../interfaces/IAlertType';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContactFormComponent {
-  alerts$: Observable<AlertDTO[]>;
+  alerts$: Observable<IAlert[]>;
   alertTypeChange$: Observable<IAlertType[]> = of([
     {
       name: 'Success',
