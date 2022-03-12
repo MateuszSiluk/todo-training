@@ -5,8 +5,8 @@ import {
 } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Observable, of } from 'rxjs';
-import { IAlert } from '../../../interfaces/IAlert';
-import { IAlertType } from '../../../interfaces/IAlertType';
+import { Alert } from '../../../interfaces/Alert';
+import { AlertType } from '../../../interfaces/AlertType';
 
 @Component({
   selector: 'lib-contact-form',
@@ -15,8 +15,8 @@ import { IAlertType } from '../../../interfaces/IAlertType';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContactFormComponent {
-  alerts$: Observable<IAlert[]>;
-  alertTypeChange$: Observable<IAlertType[]> = of([
+  alerts$: Observable<Alert[]>;
+  alertTypeChange$: Observable<AlertType[]> = of([
     {
       name: 'Success',
       type: 'success',
