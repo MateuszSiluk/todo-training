@@ -6,7 +6,11 @@
         [routerLinkActiveOptions]="{ exact: true }"
         aria-current="page"
         [routerLink]="['/pracownik/' + employee.name]"
-        [queryParams]="{ image: employee.imageUrl }"
+        [queryParams]="{
+          image: employee.imageUrl,
+          department: employee.department.name,
+          ecount: employee.department.employeeCount
+        }"
       >
         <img
           [src]="employee.imageUrl"
@@ -16,6 +20,10 @@
       </a>
       <div class="card-body">
         <h5 class="card-title">{{ employee.name }}</h5>
+        <p class="card-text">Department: {{ employee.department.name }}</p>
+        <p class="card-text">
+          Employee Count: {{ employee.department.employeeCount }}
+        </p>
         <p class="card-text">
           {{ employee.bio }}
         </p>

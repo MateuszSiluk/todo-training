@@ -19,18 +19,30 @@ export class EmployeeCardWithUrlComponent {
             name:'Dani Chavez',
             bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             imageUrl: 'http://mati.rafined.pl/images/fake-person-1.jpg',
+            department:{
+                name:"IT",
+                employeeCount: 4
+            }
         },
         {
             id: '2',
             name:'Katie Carter',
             bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             imageUrl: 'http://mati.rafined.pl/images/fake-person-2.jpg',
+            department:{
+                name:"Marketing and Sales",
+                employeeCount: 2
+            }
         },
         {
             id: '3',
             name:'Kara Welsh',
             bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             imageUrl: 'http://mati.rafined.pl/images/fake-person-3.jpg',
+            department:{
+                name:"Finance",
+                employeeCount: 3
+            }
         },
     ]);
 }

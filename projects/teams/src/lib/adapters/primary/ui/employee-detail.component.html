@@ -8,7 +8,10 @@
   <div class="card-body">
     <h5 class="card-title">{{ (params$ | async)?.name }}</h5>
     <p class="card-text">
-      <small class="text-muted">Last updated 3 mins ago</small>
+      <small class="text-muted">Department: {{ (queryParams$ | async)?.params?.department }}</small>
+    </p>
+    <p class="card-text">
+      <small class="text-muted">Employee Count: {{ (queryParams$ | async)?.params?.ecount }}</small>
     </p>
   </div>
   <button type="button" (click)="back()" class="btn btn-primary btn-lg btn-block">
