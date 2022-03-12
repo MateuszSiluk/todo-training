@@ -1,40 +1,51 @@
 <div *ngFor="let alert of alerts$ | async">
-  
-  <alert [type]="alert.type" [dismissible]="!dismissible" (onClosed)="onClosed(alert)">{{ alert.message }}</alert>
+  <alert
+    [type]="alert.type"
+    [dismissible]="!dismissible"
+    (onClosed)="onClosed(alert)"
+    >{{ alert.message }}</alert
+  >
 </div>
 <div class="col-md-8 offset-md-2 mt-5">
   <div class="card">
-      <h4 class="card-header">Contact Us</h4>
-      <div class="card-body">
-    <form [formGroup]="messageForm" (ngSubmit)="onFormSubmited(messageForm)">
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label"
-          >Email address</label
+    <h4 class="card-header">Contact Us</h4>
+    <div class="card-body">
+      <form [formGroup]="messageForm" (ngSubmit)="onFormSubmited(messageForm)">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label"
+            >Email address</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            formControlName="email"
+            placeholder="name@example.com"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label"
+            >Your message</label
+          >
+          <textarea
+            class="form-control"
+            formControlName="text"
+            rows="3"
+          ></textarea>
+        </div>
+        <select
+          class="form-select form-select-lg mb-3"
+          formControlName="alertType"
+          aria-label=".form-select-lg example"
         >
-        <input
-          type="email"
-          class="form-control"
-          formControlName="email"
-          placeholder="name@example.com"
-        />
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label"
-          >Your message</label
-        >
-        <textarea
-          class="form-control"
-          formControlName="text"
-          rows="3"
-        ></textarea>
-      </div>
-      <select class="form-select form-select-lg mb-3" formControlName="alertType" aria-label=".form-select-lg example">
-        <option selected value="success">Success</option>
-        <option value="info">Info</option>
-        <option value="warning">Warning</option>
-        <option value="danger">Danger</option>
-      </select>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+          <option
+            *ngFor="let alertType of alertTypeChange$ | async"
+            [value]="alertType.type"
+          >
+            {{ alertType.name }}
+          </option>
+        </select>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
   </div>
 </div>
