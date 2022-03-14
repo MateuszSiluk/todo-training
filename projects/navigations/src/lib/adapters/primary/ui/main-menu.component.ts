@@ -1,11 +1,7 @@
-import {
-  Component,
-  ViewEncapsulation,
-  ChangeDetectionStrategy,
-} from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { NavigationDTO } from '../../../application/ports/secondary/navigation.dto';
-
+import { Component, ViewEncapsulation, ChangeDetectionStrategy, Inject } from '@angular/core';
+import { GETS_ALL_NAVIGATION_DTO, GetsAllNavigationDtoPort } from '../../../application/ports/secondary/gets-all-navigation.dto-port';
 
 @Component({
   selector: 'lib-main-menu',
@@ -14,27 +10,9 @@ import { NavigationDTO } from '../../../application/ports/secondary/navigation.d
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainMenuComponent {
+  navbar$: Observable<NavigationDTO[]> = this._getsAllNavigationDto.getAll();
 
-  navbar$ : Observable<NavigationDTO[]> = of([
-  {
-    text:"Home",
-    link:"/"
-  },
-  {
-    text:"O Nas",
-    link:"/o-nas"
-  },
-  {
-    text:"Pracownik",
-    link:"/pracownik"
-  },
-  {
-    text:"Kontakt",
-    link:"/kontakt"
-  },
-  {
-    text:"Test Komponentow",
-    link:"/component-tests"
-  },
-]);
+  constructor(@Inject(GETS_ALL_NAVIGATION_DTO) private _getsAllNavigationDto: GetsAllNavigationDtoPort) {
+  }
+
 }
