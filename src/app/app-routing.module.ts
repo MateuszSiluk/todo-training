@@ -7,6 +7,7 @@ import { ComponentsTestsPageModule } from './pages/components-tests.page-module'
 import { EmployeeDetailsPageModule } from './pages/employee-details.page-module';
 import { EmployeeCardsPageModule } from './pages/employee-cards.page-module';
 import { ContactPageModule } from './pages/contact.page-module';
+import { AdminPageModule } from './pages/admin.page-module';
 
 const routes: Routes = [{ 
         path: '', 
@@ -32,6 +33,10 @@ const routes: Routes = [{
   { 
         path: 'kontakt', 
         loadChildren: () => ContactPageModule
+      },
+  { 
+        path: 'admin', 
+        loadChildren: () => AdminPageModule
       }
 ];
 

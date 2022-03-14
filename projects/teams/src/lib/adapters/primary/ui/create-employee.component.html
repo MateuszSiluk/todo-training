@@ -1,0 +1,11 @@
+<form [formGroup]="createEmployeeForm" (ngSubmit)="onFormSubmited(createEmployeeForm)">
+  <input type="text" formControlName="name" placeholder="Name" /><input
+    type="text"
+    formControlName="bio"
+    placeholder="Bio"
+  /><input
+    type="text"
+    formControlName="imageUrl"
+    placeholder="Image Url"
+  /><input type="submit" value="Submit" />
+</form>
