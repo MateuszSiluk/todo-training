@@ -14,6 +14,7 @@ import {
   ADDS_EMPLOYEE_DTO,
   AddsEmployeeDtoPort,
 } from '../../../application/ports/secondary/adds-employee.dto-port';
+import { AlertComponent } from 'ngx-bootstrap/alert';
 
 @Component({
   selector: 'lib-create-employee',
@@ -32,8 +33,11 @@ export class CreateEmployeeComponent {
     }),
   });
 
+ 
+
   onFormSubmited(createEmployeeForm: FormGroup): void {
     this.onEmployeesFormSubmited();
+    this.addAlert(this.createEmployeeForm.value.name);
   }
 
   constructor(
@@ -42,5 +46,20 @@ export class CreateEmployeeComponent {
 
   onEmployeesFormSubmited(): void {
     this._addsEmployeeDto.add(this.createEmployeeForm.getRawValue());
+  }
+
+  
+  alerts: any[] = [];
+ 
+  addAlert(name:string): void {
+    this.alerts.push({
+      type: 'success',
+      msg: `Success you added ${name} to database!`,
+      timeout: 5000
+    });
+  }
+ 
+  onClosed(dismissedAlert: AlertComponent): void {
+    this.alerts = this.alerts.filter(alert => alert !== dismissedAlert);
   }
 }

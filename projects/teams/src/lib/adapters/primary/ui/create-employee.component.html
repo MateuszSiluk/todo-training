@@ -1,3 +1,6 @@
+<div *ngFor="let alert of alerts">
+  <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" (onClosed)="onClosed(alert)">{{ alert.msg }}</alert>
+</div>
 <div class="col-md-8 offset-md-2 mt-5">
   <div class="card">
     <h4 class="card-header">Create New Employee</h4>
