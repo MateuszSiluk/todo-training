@@ -17,13 +17,13 @@ export class CreateEmployeeComponent {
 
   onFormSubmited(createEmployeeForm: FormGroup): void {
     
-    this.onEmployeesFormsubmited();
+    this.onEmployeesFormSubmited();
 }
 
   constructor(@Inject(ADDS_EMPLOYEE_DTO) private _addsEmployeeDto: AddsEmployeeDtoPort) {
   }
 
-  onEmployeesFormsubmited(): void {
+  onEmployeesFormSubmited(): void {
     this._addsEmployeeDto.add(this.createEmployeeForm.getRawValue());
   }
 }
