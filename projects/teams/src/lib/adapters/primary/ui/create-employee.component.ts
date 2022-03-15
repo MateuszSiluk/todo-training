@@ -27,7 +27,7 @@ export class CreateEmployeeComponent {
     bio: new FormControl(),
     imageUrl: new FormControl(),
     department: new FormGroup({
-      emplyeeCount: new FormControl(),
+      employeeCount: new FormControl(),
       departmentName: new FormControl(),
     }),
   });

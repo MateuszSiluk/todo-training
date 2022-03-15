@@ -1,23 +1,66 @@
-<form
-  [formGroup]="createEmployeeForm"
-  (ngSubmit)="onFormSubmited(createEmployeeForm)"
->
-  <input type="text" formControlName="name" placeholder="Name" /><input
-    type="text"
-    formControlName="bio"
-    placeholder="Bio"
-  /><input type="text" formControlName="imageUrl" placeholder="Image Url" />
-  <div formGroupName="department">
-    <input
-      type="text"
-      formControlName="emplyeeCount"
-      placeholder="Emplyee Count"
-    />
-    <input
-      type="text"
-      formControlName="departmentName"
-      placeholder="Department Name"
-    />
+<div class="col-md-8 offset-md-2 mt-5">
+  <div class="card">
+    <h4 class="card-header">Create New Employee</h4>
+    <div class="card-body">
+      <form [formGroup]="createEmployeeForm" (ngSubmit)="onFormSubmited(createEmployeeForm)">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label"
+            >Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            formControlName="name"
+            placeholder="Name"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label"
+            >Image Url</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            formControlName="imageUrl"
+            placeholder="Image Url"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label"
+            >Bio</label
+          >
+          <textarea
+            class="form-control"
+            formControlName="bio"
+            rows="3"
+          ></textarea>
+        </div>
+        <div formGroupName="department">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Department Name</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              formControlName="departmentName"
+              placeholder="Department Name"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Employee Count</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              formControlName="employeeCount"
+              placeholder="Employee Count"
+            />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
   </div>
-  <input type="submit" value="Submit" />
-</form>
+</div>
