@@ -1,9 +1,6 @@
-import {
-  Component,
-  ViewEncapsulation,
-  ChangeDetectionStrategy,
-} from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy, Inject } from '@angular/core';
+import { ADDS_EMPLOYEE_DTO, AddsEmployeeDtoPort } from '../../../application/ports/secondary/adds-employee.dto-port';
 
 @Component({
   selector: 'lib-create-employee',
@@ -20,8 +17,13 @@ export class CreateEmployeeComponent {
 
   onFormSubmited(createEmployeeForm: FormGroup): void {
     
-
-    //Showing the Values in the console
-    console.log(createEmployeeForm.getRawValue());
+    this.onEmployeesFormsubmited();
 }
+
+  constructor(@Inject(ADDS_EMPLOYEE_DTO) private _addsEmployeeDto: AddsEmployeeDtoPort) {
+  }
+
+  onEmployeesFormsubmited(): void {
+    this._addsEmployeeDto.add(this.createEmployeeForm.getRawValue());
+  }
 }
