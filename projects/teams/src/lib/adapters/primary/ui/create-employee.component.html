@@ -1,11 +1,23 @@
-<form [formGroup]="createEmployeeForm" (ngSubmit)="onFormSubmited(createEmployeeForm)">
+<form
+  [formGroup]="createEmployeeForm"
+  (ngSubmit)="onFormSubmited(createEmployeeForm)"
+>
   <input type="text" formControlName="name" placeholder="Name" /><input
     type="text"
     formControlName="bio"
     placeholder="Bio"
-  /><input
-    type="text"
-    formControlName="imageUrl"
-    placeholder="Image Url"
-  /><input type="submit" value="Submit" />
+  /><input type="text" formControlName="imageUrl" placeholder="Image Url" />
+  <div formGroupName="department">
+    <input
+      type="text"
+      formControlName="emplyeeCount"
+      placeholder="Emplyee Count"
+    />
+    <input
+      type="text"
+      formControlName="departmentName"
+      placeholder="Department Name"
+    />
+  </div>
+  <input type="submit" value="Submit" />
 </form>
