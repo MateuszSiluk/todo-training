@@ -10,7 +10,6 @@ import { ADDS_EMPLOYEE_DTO } from '../../../application/ports/secondary/adds-emp
   providers: [
     FirebaseEmployeesService,
     { provide: GETS_ALL_EMPLOYEE_DTO, useExisting: FirebaseEmployeesService },
-    { provide: GETS_ALL_EMPLOYEE_DTO, useExisting: FirebaseEmployeesService },
     { provide: ADDS_EMPLOYEE_DTO, useExisting: FirebaseEmployeesService }
   ],
   exports: [],
