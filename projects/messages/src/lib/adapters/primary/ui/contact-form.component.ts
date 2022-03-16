@@ -1,12 +1,9 @@
-import {
-  Component,
-  ViewEncapsulation,
-  ChangeDetectionStrategy,
-} from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 import { Alert } from '../../../interfaces/Alert';
 import { AlertType } from '../../../interfaces/AlertType';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy, Inject } from '@angular/core';
+import { ADDS_MESSAGE_DTO, AddsMessageDtoPort } from '../../../application/ports/secondary/adds-message.dto-port';
 
 @Component({
   selector: 'lib-contact-form',
@@ -15,25 +12,7 @@ import { AlertType } from '../../../interfaces/AlertType';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContactFormComponent {
-  alerts$: Observable<Alert[]>;
-  alertTypeChange$: Observable<AlertType[]> = of([
-    {
-      name: 'Success',
-      type: 'success',
-    },
-    {
-      name: 'Info',
-      type: 'info',
-    },
-    {
-      name: 'Warning',
-      type: 'warning',
-    },
-    {
-      name: 'Danger',
-      type: 'danger',
-    },
-  ]);
+  
 
   readonly messageForm: FormGroup = new FormGroup({
     email: new FormControl(),
@@ -42,18 +21,18 @@ export class ContactFormComponent {
   });
 
   onFormSubmited(messageForm: FormGroup): void {
-    this.alerts$ = of([
-      {
-        type: messageForm.value.alertType,
-        message:
-          'This is Email:' +
-          messageForm.value.email +
-          'and this is Text: \n' +
-          messageForm.value.text,
-      },
-    ]);
-
-    //Showing the Values in the console
-    console.log(messageForm.getRawValue());
+    if (messageForm.invalid) {
+      return;
+    }
+    this._addsMessageDto.add({
+      email: messageForm.get('email').value,
+      text: messageForm.get('text').value,
+    });
+    this.messageForm.reset();
   }
+
+  constructor(@Inject(ADDS_MESSAGE_DTO) private _addsMessageDto: AddsMessageDtoPort) {
+  }
+
+ 
 }

@@ -1,11 +1,4 @@
-<div *ngFor="let alert of alerts$ | async">
-  <alert
-    [type]="alert.type"
-    [dismissible]="!dismissible"
-    (onClosed)="onClosed(alert)"
-    >{{ alert.message }}</alert
-  >
-</div>
+
 <div class="col-md-8 offset-md-2 mt-5">
   <div class="card">
     <h4 class="card-header">Contact Us</h4>
@@ -32,18 +25,8 @@
             rows="3"
           ></textarea>
         </div>
-        <select
-          class="form-select form-select-lg mb-3"
-          formControlName="alertType"
-          aria-label=".form-select-lg example"
-        >
-          <option
-            *ngFor="let alertType of alertTypeChange$ | async"
-            [value]="alertType.type"
-          >
-            {{ alertType.name }}
-          </option>
-        </select>
+        
+          
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
