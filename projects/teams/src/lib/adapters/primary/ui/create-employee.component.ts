@@ -42,6 +42,8 @@ export class CreateEmployeeComponent {
     }
     this._addsEmployeeDto.add(createEmployeeForm.getRawValue());
     this.addAlert(createEmployeeForm.value.name);
+
+    this.createEmployeeForm.reset();
   }
 
   constructor(
