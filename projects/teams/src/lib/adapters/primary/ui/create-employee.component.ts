@@ -35,19 +35,20 @@ export class CreateEmployeeComponent {
 
  
 
-  onFormSubmited(createEmployeeForm: FormGroup): void {
-    this.onEmployeesFormSubmited();
-    this.addAlert(this.createEmployeeForm.value.name);
+  onCreateEmployeeSubmited(createEmployeeForm: FormGroup, ): void {
+    if(createEmployeeForm.invalid)
+    {
+      return;
+    }
+    this._addsEmployeeDto.add(createEmployeeForm.getRawValue());
+    this.addAlert(createEmployeeForm.value.name);
   }
 
   constructor(
     @Inject(ADDS_EMPLOYEE_DTO) private _addsEmployeeDto: AddsEmployeeDtoPort
   ) {}
 
-  onEmployeesFormSubmited(): void {
-    this._addsEmployeeDto.add(this.createEmployeeForm.getRawValue());
-  }
-
+  
   
   alerts: any[] = [];
  
