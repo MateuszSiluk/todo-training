@@ -5,12 +5,8 @@
           [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{exact:true}"
           aria-current="page"
-          [routerLink]="['/pracownik/' + employee.name]"
-          [queryParams]="{
-            image: employee.imageUrl,
-            department: employee.department.name,
-            ecount: employee.department.employeeCount
-          }"
+          [routerLink]="['/pracownik/' + employee.id]"
+          
         >
           <img
             [src]="[employee.imageUrl]"

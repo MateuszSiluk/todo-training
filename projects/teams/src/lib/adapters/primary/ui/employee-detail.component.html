@@ -1,17 +1,18 @@
+{{employee$ | async | json}}
 <div class=" d-flex justify-content-center">
 <div class="card col-5 ">
   <img
     class="card-img-top"
-    [src]="[(queryParams$ | async)?.params?.image]"
+    [src]="[(employee$ | async)?.imageUrl]"
     alt="Card image cap"
   />
   <div class="card-body">
-    <h5 class="card-title">{{ (params$ | async)?.name }}</h5>
+    <h5 class="card-title">{{ (employee$ | async)?.name }}</h5>
     <p class="card-text">
-      <small class="text-muted">Department: {{ (queryParams$ | async)?.params?.department }}</small>
+      <small class="text-muted">Department: {{ (employee$| async)?.department.name}}</small>
     </p>
     <p class="card-text">
-      <small class="text-muted">Employee Count: {{ (queryParams$ | async)?.params?.ecount }}</small>
+      <small class="text-muted">Employee Count: {{ (employee$| async)?.department.employeeCount}}</small>
     </p>
   </div>
   <button type="button" (click)="back()" class="btn btn-primary btn-lg btn-block">
