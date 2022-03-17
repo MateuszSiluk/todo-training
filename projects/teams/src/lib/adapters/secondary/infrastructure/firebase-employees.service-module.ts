@@ -3,6 +3,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { FirebaseEmployeesService } from './firebase-employees.service';
 import { GETS_ALL_EMPLOYEE_DTO } from '../../../application/ports/secondary/gets-all-employee.dto-port';
 import { ADDS_EMPLOYEE_DTO } from '../../../application/ports/secondary/adds-employee.dto-port';
+import { GETS_ONE_EMPLOYEE_DTO } from '../../../application/ports/secondary/gets-one-employee.dto-port';
 
 @NgModule({
   imports: [AngularFirestoreModule],
@@ -10,7 +11,8 @@ import { ADDS_EMPLOYEE_DTO } from '../../../application/ports/secondary/adds-emp
   providers: [
     FirebaseEmployeesService,
     { provide: GETS_ALL_EMPLOYEE_DTO, useExisting: FirebaseEmployeesService },
-    { provide: ADDS_EMPLOYEE_DTO, useExisting: FirebaseEmployeesService }
+    { provide: ADDS_EMPLOYEE_DTO, useExisting: FirebaseEmployeesService },
+    { provide: GETS_ONE_EMPLOYEE_DTO, useExisting: FirebaseEmployeesService }
   ],
   exports: [],
 })
