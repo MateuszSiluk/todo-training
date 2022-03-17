@@ -6,11 +6,6 @@
         [routerLinkActiveOptions]="{ exact: true }"
         aria-current="page"
         [routerLink]="['/pracownik/' + employee.id]"
-        [queryParams]="{
-          image: employee.imageUrl,
-          department: employee.department.name,
-          ecount: employee.department.employeeCount
-        }"
       >
         <img
           [src]="employee.imageUrl"
