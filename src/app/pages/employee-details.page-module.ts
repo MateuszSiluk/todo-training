@@ -7,7 +7,7 @@ import { EmployeeDetailComponentModule } from '../../../projects/teams/src/lib/a
 @NgModule({ imports: [CommonModule,
       RouterModule.forChild([
         {
-          path: '',
+          path: ':employeeId',
           component: EmployeeDetailsPage,
         }
       ]),

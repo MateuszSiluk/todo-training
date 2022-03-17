@@ -22,7 +22,7 @@ const routes: Routes = [{
         loadChildren: () => ComponentsTestsPageModule
       },
   { 
-        path: 'pracownik/:name', 
+        path: 'pracownik', 
         loadChildren: () => EmployeeDetailsPageModule
       },
   { 
