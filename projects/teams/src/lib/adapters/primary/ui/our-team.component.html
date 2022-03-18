@@ -5,7 +5,7 @@
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{ exact: true }"
         aria-current="page"
-        [routerLink]="['/pracownik/' + employee.id]"
+        [routerLink]="['/pracownik/' + employee.id]" (click)="onEmployeeClicked(employee)"
       >
         <img
           [src]="employee.imageUrl"
