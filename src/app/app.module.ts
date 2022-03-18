@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { MainMenuComponentModule } from 'projects/navigations/src/public-api';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
+import { InMemoryContextStorageModule } from 'projects/teams/src/lib/adapters/secondary/infrastructure/in-memory-context.storage-module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,8 @@ import { environment } from 'src/environments/environment';
     AppRoutingModule,
     MainMenuComponentModule,
     AngularFireModule.initializeApp(environment.firebase),
+    InMemoryContextStorageModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

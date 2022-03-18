@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { EmployeeDetailsPage } from './employee-details.page';
 import { EmployeeDetailComponentModule } from '../../../projects/teams/src/lib/adapters/primary/ui/employee-detail.component-module';
 
+
 @NgModule({ imports: [CommonModule,
       RouterModule.forChild([
         {
@@ -11,7 +12,7 @@ import { EmployeeDetailComponentModule } from '../../../projects/teams/src/lib/a
           component: EmployeeDetailsPage,
         }
       ]),
-  EmployeeDetailComponentModule
+  EmployeeDetailComponentModule,
 ],
   	declarations: [EmployeeDetailsPage],
   	providers: [],
